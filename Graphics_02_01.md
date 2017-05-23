@@ -1,0 +1,79 @@
+# Aim: Bits o' pixels
+
+Represent color data
+
+1 bit: one color, on off
+
+2 bit: on off, one with intesity
+
+3 bits: RGB, onoff
+
+4 bits: RGB, intensity on off
+
+6 bits: RGB for intensity on each rgb
+
+
+
+**Color Depth:** Memory used for color per pixel.
+
+**Primary Colors:** Blue, red, yellow/cyan, magenta.
+
+
+
+### Image Types
+
+- Uncompressed
+
+
+- Compressed 
+
+
+- Lossless
+- Lossy
+
+
+
+## Image File Types
+
+### Raster Format
+
+- **Raster format is a grid of pixels.**
+
+
+- **jpg**: Compressed, Lossy
+
+- **png**: Compressed, Lossless
+
+  - Run Length Encoding
+
+    GGGRPPPP		3G1R4P
+
+    FFOOOOOO  →    2F6O
+
+- **gif**: Compressed, Lossless
+
+#### Vector Formats 
+
+- **Vector formats are drawing instructions, so they're scalable.**
+- **svg**, **pdf**
+
+
+
+## Net PBM
+
+- Uncompressed and Lossless
+
+- *.ppm
+
+- All whitespace is the same.
+
+- Format
+
+  ​	Header → P3
+
+  ​			   XRES YRES
+
+  ​			   MAX COLOR
+
+  ​	Pixel Data → R G B R G B
+
