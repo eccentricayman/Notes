@@ -58,16 +58,29 @@
         <nav class="navbar" id="nav">
             <div class="container">
                 <ul class="navbar-list">
-                    <li class="navbar-item navbar-image-item"><a class="navbar-link navbar-image" href="#home"><img class="navbar-image-link" src="images/logo.png" /></a></li>
+                    <li class="navbar-item navbar-image-item"><a class="navbar-link navbar-image" href="http://aymanahmed.me"><img class="navbar-image-link" src="images/logo.png" /></a></li>
                     <!-- Reverse order bc I'm too lazy to fix the float -->
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="#contact" style="margin-right: 0">Contact</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="#projects">Projects</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="#skills">Skills</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="#about">About</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#contact" style="margin-right: 0">Contact</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#projects">Projects</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#skills">Skills</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#about">About</a></li>
                 </ul>
             </div>
         </nav>
-        
+
+		<h1 class="heading" style="padding-top: 7.5%">Notes</h1>
+		<br>
+
+		<div class="row">
+			<div class="six columns subject dropdown">
+				
+			</div>
+			
+			<div class="six columns subject dropdown">
+				
+			</div>
+		</div>
+
         <div class="footer-wrapper" id="contact">
 			
             <div class="row footer">
@@ -99,25 +112,6 @@
          window.onload = function () {
 			 
          };
-        </script>
-        
-        <script type="text/javascript">
-         //make navbar come down
-         function navbarToggle() {
-             if ($(window).width() >= 750) {
-                 window.onscroll = function(e) {
-                     var cover = $("#home").offset().top + $("#home").outerHeight();
-                     if ($(window).scrollTop() > cover) {
-                         $("#nav").slideDown("fast");
-                     }
-                     else {
-                         $("#nav").slideUp("fast");
-                     }
-                 };
-             }
-         }
-         navbarToggle();
-         window.addEventListener('resize', navbarToggle);
         </script>
 		
     </body>
