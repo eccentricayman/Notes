@@ -60,6 +60,14 @@
                 <ul class="navbar-list">
                     <li class="navbar-item navbar-image-item"><a class="navbar-link navbar-image" href="http://aymanahmed.me"><img class="navbar-image-link" src="images/logo.png" /></a></li>
                     <!-- Reverse order bc I'm too lazy to fix the float -->
+					<li class="navbar-item dropdown-caller">
+						<a class="navbar-link" href="#non-link"><i style="margin-right: 0" class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-list">
+							<li><a class="sliding-middle-out" href="#">Notes</a></li>
+							<!-- <hr style="padding: 0 ; margin: 0;">
+								 <li><a href="http://notes.aymanahmed.me">Notes</a></li> -->
+						</ul>
+					</li>
                     <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#contact" style="margin-right: 0">Contact</a></li>
                     <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#projects">Projects</a></li>
                     <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#skills">Skills</a></li>
@@ -106,7 +114,19 @@
         
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
+
+		<script type="text/javascript">
+		 //make dropdown on navbar work, this is ok bc there's only one
+		 //stop gets rid of count
+		 $(".dropdown-caller").on("mouseover", function() {
+			 $(".dropdown-list").stop(true, false, true).slideDown(150);
+		 })
+		 $(".dropdown-list").on("mouseout", function() {
+			 $(".dropdown-list").stop(true, false, true).slideUp(150);
+		 })
+		</script>
+		
+		
         <script type="text/javascript">
          //all notes slide up
          window.onload = function () {
