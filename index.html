@@ -47,9 +47,7 @@
 		<!-- md files rendering -->
 		<script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/v0.7.15/webcomponents-lite.min.js"></script>
 		<link rel="import"
-			  href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/build/zero-md.html"
-		      media="none"
-              onload="if(media!='all')media='all'">
+			  href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/build/zero-md.html">
 
     </head>
 
@@ -80,13 +78,39 @@
 		<br>
 
 		<div class="row">
-			<div class="six columns subject dropdown">
-				
+			<div class="four columns subject" id="softdev">
+				<a class="footer-link dropdown-link">Software Development <i class="fa fa-angle-down"></i></a>
+				<ul class="dropdown-files">
+					<li><a href="ayylmao">09_05</a></li>
+					<hr>
+					<li><a href="ayylmao">09_05</a></li>
+				</ul>
 			</div>
 			
-			<div class="six columns subject dropdown">
-				
+			<div class="four columns subject" id="systems"> 
+				<a class="footer-link dropdown-link">Systems Level Programming <i class="fa fa-angle-down"></i></a>
+				<ul class="dropdown-files">
+					
+				</ul>
 			</div>
+
+			<div class="four columns subject" id="graphics"> 
+				<a class="footer-link dropdown-link">Computer Graphics <i class="fa fa-angle-down"></i></a>
+				<ul class="dropdown-files">
+					
+				</ul>
+			</div>
+			
+		</div>
+
+		<div class="row">
+			<div class="four columns subject" id="scifi">
+				<a class="footer-link dropdown-link">Science Fiction <i class="fa fa-angle-down"></i></a>
+				<ul class="dropdown-files">
+					<li><a href="ayylmao">09_05 <i class="fa fa-angle-right"></i></a></li>
+				</ul>
+			</div>
+			
 		</div>
 
         <div class="footer-wrapper" id="contact">
@@ -129,6 +153,9 @@
 		
         <script type="text/javascript">
          //all notes slide up
+		 $(".dropdown-link").on("click", function() {
+			 $(this).siblings(".dropdown-files").slideToggle();
+		 })
          window.onload = function () {
 			 
          };

@@ -125,7 +125,59 @@ body {
 }
 
 .row, .row-omega {
+	margin: 5%;
+	margin-top: 0;
     padding-bottom: 0;
+}
+
+.subject {
+	border: 2px solid #ddd;
+	padding: 1%;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+.dropdown-link {
+	font-size: 22px;
+	color: #404040;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.dropdown-files {
+	width: 100%;
+	list-style: none;
+	display: none;
+}
+
+.dropdown-files > hr {
+	margin: 0;
+	padding: 0;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.dropdown-files > li {
+	width: 100%;
+	margin: 10px;
+}
+
+.dropdown-files > li > a {
+	color: #404040;
+	text-decoration: none;
+	display: block;
+	width: 50%;
+	padding-top: 2%;
+	padding-bottom: 1%;
+	margin: 0 auto;
+	transition: 0.3s all;
+}
+
+.dropdown-files > li > a:hover {
+	color: #404040;
+	background-color: rgba(0, 0, 0, 0.1);
+	transition: 0.3s all;
 }
 
 /* Larger than tablet */
