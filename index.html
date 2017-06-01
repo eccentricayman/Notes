@@ -44,11 +44,8 @@
             media="none"
             onload="if(media!='all')media='all'">
 
-		<!-- md files rendering -->
-		<script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/v0.7.15/webcomponents-lite.min.js"></script>
-		<link rel="import"
-			  href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/build/zero-md.html">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="markdown.js"></script>
     </head>
 
     <body>
@@ -79,40 +76,38 @@
 
 		<div class="row">
 			<div class="four columns subject" id="softdev">
-				<a class="footer-link dropdown-link">Software Development <i class="fa fa-angle-down"></i></a>
+				<a class="dropdown-link">Software Development <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
-					<li><a href="ayylmao">09_05</a></li>
-					<hr>
-					<li><a href="ayylmao">09_05</a></li>
+					
 				</ul>
 			</div>
 			
 			<div class="four columns subject" id="systems"> 
-				<a class="footer-link dropdown-link">Systems Level Programming <i class="fa fa-angle-down"></i></a>
+				<a class="dropdown-link">Systems Level Programming <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					
 				</ul>
 			</div>
 
 			<div class="four columns subject" id="graphics"> 
-				<a class="footer-link dropdown-link">Computer Graphics <i class="fa fa-angle-down"></i></a>
+				<a class="dropdown-link">Computer Graphics <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					
 				</ul>
 			</div>
 			
 		</div>
-
+		
 		<div class="row">
 			<div class="four columns subject" id="scifi">
-				<a class="footer-link dropdown-link">Science Fiction <i class="fa fa-angle-down"></i></a>
+				<a class="dropdown-link">Science Fiction <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					<li><a href="ayylmao">09_05 <i class="fa fa-angle-right"></i></a></li>
 				</ul>
 			</div>
 			
 		</div>
-
+		
         <div class="footer-wrapper" id="contact">
 			
             <div class="row footer">
@@ -137,8 +132,6 @@
         </div>
         
         <!-- Scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 		<script type="text/javascript">
 		 //make dropdown on navbar work, this is ok bc there's only one
 		 //stop gets rid of count
@@ -152,13 +145,31 @@
 		
 		
         <script type="text/javascript">
-         //all notes slide up
+         //notes menus
 		 $(".dropdown-link").on("click", function() {
 			 $(this).siblings(".dropdown-files").slideToggle();
+			 if ($(this).children(".fa").attr("class") == "fa fa-angle-down") {
+				 $(this).children(".fa").attr("class", "fa fa-angle-up");
+			 }
+			 else {
+				 $(this).children(".fa").attr("class", "fa fa-angle-down");
+			 }
 		 })
-         window.onload = function () {
-			 
-         };
+		</script>
+		
+		<script type="text/javascript">
+		 //this shows a file
+		 var loadFile = function(toLoad) {
+			 jQuery.get(toLoad, function(data) {
+				 var markdownData = markdown.toHTML(data, "Maruku");
+
+				 var htmlObject = document.createElement('div');
+				 htmlObject.innerHTML = markdownData;
+				 document.body.appendChild(htmlObject)
+			 });
+		 }
+
+		 loadFile("README.md");
         </script>
 		
     </body>

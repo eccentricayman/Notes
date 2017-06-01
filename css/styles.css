@@ -138,11 +138,16 @@ body {
 }
 
 .dropdown-link {
-	font-size: 22px;
+	font-size: 18px;
 	color: #404040;
 	display: block;
 	margin: 0;
 	padding: 0;
+	cursor: pointer;
+}
+
+.dropdown-link:hover {
+	color: #404040;
 }
 
 .dropdown-files {
