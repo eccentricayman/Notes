@@ -158,6 +158,8 @@
 		</script>
 		
 		<script type="text/javascript">
+		 //this makes the page static but the popup visible
+		 
 		 //this shows a file
 		 var loadFile = function(toLoad) {
 			 jQuery.get(toLoad, function(data) {
@@ -165,6 +167,7 @@
 
 				 var htmlObject = document.createElement('div');
 				 htmlObject.innerHTML = markdownData;
+				 $(htmlObject).attr("class", "file");
 				 document.body.appendChild(htmlObject)
 			 });
 		 }
