@@ -45,6 +45,12 @@
             onload="if(media!='all')media='all'">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		 var filesData = "";
+		 jQuery.get("files.txt", function(data) {
+			 filesData = data;
+		 });
+		</script>
 		<script type="text/javascript" src="markdown.js"></script>
     </head>
 
@@ -157,11 +163,6 @@
 		</script>
 		
 		<script type="text/javascript">
-		 var filesData = "";
-		 jQuery.get("files.txt", function(data) {
-			 filesData = data;
-		 });
-
 		 //splitting into each file + folder
 		 var files = filesData.split("\n\n");
 		 for (i = 0 ; i < files.length ; i++) {
