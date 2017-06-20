@@ -8,7 +8,7 @@ for dirpath, dirnames, filenames in os.walk("../../files"):
     for filename in [f for f in filenames if f.endswith(".md")]:
         files.append(os.path.join(dirpath, filename))
 
-fileLog = open("files.txt", "w")
+fileLog = open("../../files.txt", "w")
 
 for filePath in files:
     fileLog.write(filePath + "\n")
