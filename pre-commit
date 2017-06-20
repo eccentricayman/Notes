@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ../../
+
+#id rather not use bash scripting for this
+python updateFiles.py
