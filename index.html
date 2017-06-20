@@ -44,8 +44,8 @@
             media="none"
             onload="if(media!='all')media='all'">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+		<script type="text/javascript" defer>
 		 var filesData = "";
 		 jQuery.get("files.txt", function(data) {
 			 filesData = data;
@@ -162,7 +162,7 @@
 		 })
 		</script>
 		
-		<script type="text/javascript">
+		<script type="text/javascript" defer>
 		 //splitting into each file + folder
 		 var files = filesData.split("\n\n");
 		 for (i = 0 ; i < files.length ; i++) {
