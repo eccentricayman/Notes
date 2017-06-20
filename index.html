@@ -75,21 +75,21 @@
 		<br>
 
 		<div class="row">
-			<div class="four columns subject" id="softdev">
+			<div class="four columns subject" id="SoftDev">
 				<a class="dropdown-link">Software Development <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					
 				</ul>
 			</div>
 			
-			<div class="four columns subject" id="systems"> 
+			<div class="four columns subject" id="Systems"> 
 				<a class="dropdown-link">Systems Level Programming <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					
 				</ul>
 			</div>
 
-			<div class="four columns subject" id="graphics"> 
+			<div class="four columns subject" id="Graphics"> 
 				<a class="dropdown-link">Computer Graphics <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 					
@@ -99,10 +99,9 @@
 		</div>
 		
 		<div class="row">
-			<div class="four columns subject" id="scifi">
+			<div class="four columns subject" id="SciFi">
 				<a class="dropdown-link">Science Fiction <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
-					<li><a href="ayylmao">09_05 <i class="fa fa-angle-right"></i></a></li>
 				</ul>
 			</div>
 			
@@ -158,11 +157,34 @@
 		</script>
 		
 		<script type="text/javascript">
-		 var files = jQuery.get("files.txt", function(data) {
-			 console.log(data);
-		 })['responseText'];
+		 var filesData = "";
+		 jQuery.get("files.txt", function(data) {
+			 filesData = data;
+		 });
 
-		 var filesArray = files.split("\n");
+		 //splitting into each file + folder
+		 var files = filesData.split("\n\n");
+		 for (i = 0 ; i < files.length ; i++) {
+			 files[i] = files[i].split("\n");
+		 }
+
+		 
+		 for (i = 0 ; i < files.length ; i++) {
+			 //read the directory name
+			 var dirName = files[i][0].split("/")[1];
+			 //find the right link
+			 var list = $("#" + dirName + " > ul.dropdown-files");
+			 for (j = 0 ; j < files[i].length ; j++) {
+				 var filepath = files[i][j];
+				 var filename = files[i][j].split("/")[2].split(".md")[0];
+				 
+				 var listElement = document.createElement("li");
+				 listElement.innerHTML = `<a onclick="loadFile('` + filepath + `');">` + filename + `</a>`
+				 list.append(listElement)
+			 }
+		 }
+		 
+		 
 		 
 		 //this shows a file
 		 var loadFile = function(toLoad) {
