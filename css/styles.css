@@ -185,6 +185,45 @@ body {
 	transition: 0.3s all;
 }
 
+.file-wrapper {
+	background: rgba(0, 0, 0, 0.75);
+	width: 100%;
+	overflow: auto;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+}
+
+.file {
+	padding: 5%;
+	margin: 5% auto;
+	height: auto;
+	width: 75%;
+	background-color: white;
+	z-index: 9999999;
+}
+
+.exit {
+	position: fixed;
+	right: 1%;
+	top: 1%;
+	text-decoration: none;
+	z-index: 99999999;
+	color: white;
+	padding: 2%;
+	padding-left: 3.25%;
+	padding-right: 3.25%;
+	border-radius: 9999px;
+	background-color: #222222;
+}
+
+.exit:hover {
+	color: #bbbbbb;
+}
+
 /* Larger than tablet */
 @media (min-width: 750px) {
 
@@ -387,5 +426,42 @@ body {
         padding-top: 0;
         padding-bottom: 2%;
     }
+
+	.file-wrapper {
+		background: rgba(0, 0, 0, 0.75);
+		width: 100%;
+		overflow: auto;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999999;
+	}
+	
+	.file {
+		padding: 5%;
+		margin: 5% auto;
+		height: auto;
+		width: 75%;
+		background-color: white;
+		z-index: 9999999;
+	}
+
+	.exit {
+		position: fixed;
+		right: 1%;
+		top: 1%;
+		text-decoration: none;
+		z-index: 99999999;
+		color: white;
+		padding: 0;
+		border-radius: 0;
+		background-color: transparent;
+	}
+
+	.exit:hover {
+		color: #bbbbbb;
+	}
 
 }

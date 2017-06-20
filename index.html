@@ -44,13 +44,7 @@
             media="none"
             onload="if(media!='all')media='all'">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
-		<script type="text/javascript" defer>
-		 var filesData = "";
-		 jQuery.get("files.txt", function(data) {
-			 filesData = data;
-		 });
-		</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="markdown.js"></script>
     </head>
 
@@ -59,20 +53,20 @@
         <nav class="navbar" id="nav">
             <div class="container">
                 <ul class="navbar-list">
-                    <li class="navbar-item navbar-image-item"><a class="navbar-link navbar-image" href="http://aymanahmed.me"><img class="navbar-image-link" src="images/logo.png" /></a></li>
+                    <li class="navbar-item navbar-image-item"><a class="navbar-link navbar-image" href="http://aymanahmed.tech"><img class="navbar-image-link" src="images/logo.png" /></a></li>
                     <!-- Reverse order bc I'm too lazy to fix the float -->
 					<li class="navbar-item dropdown-caller">
 						<a class="navbar-link" href="#non-link"><i style="margin-right: 0" class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-list">
 							<li><a class="sliding-middle-out" href="#">Notes</a></li>
 							<!-- <hr style="padding: 0 ; margin: 0;">
-								 <li><a href="http://notes.aymanahmed.me">Notes</a></li> -->
+								 <li><a href="http://notes.aymanahmed.tech">Notes</a></li> -->
 						</ul>
 					</li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#contact" style="margin-right: 0">Contact</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#projects">Projects</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#skills">Skills</a></li>
-                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.me/#about">About</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.tech/#contact" style="margin-right: 0">Contact</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.tech/#projects">Projects</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.tech/#skills">Skills</a></li>
+                    <li class="navbar-item"><a class="navbar-link sliding-middle-out" href="http://aymanahmed.tech/#about">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -162,30 +156,39 @@
 		 })
 		</script>
 		
-		<script type="text/javascript" defer>
-		 //splitting into each file + folder
-		 var files = filesData.split("\n\n");
-		 for (i = 0 ; i < files.length ; i++) {
-			 files[i] = files[i].split("\n");
-		 }
+		<script type="text/javascript">
+		 jQuery.ajax({
+			 url: "files.txt",
+			 async: false,
+			 success: function(data) {
+				 var filesData = data;
 
-		 
-		 for (i = 0 ; i < files.length ; i++) {
-			 //read the directory name
-			 var dirName = files[i][0].split("/")[1];
-			 //find the right link
-			 var list = $("#" + dirName + " > ul.dropdown-files");
-			 for (j = 0 ; j < files[i].length ; j++) {
-				 var filepath = files[i][j];
-				 var filename = files[i][j].split("/")[2].split(".md")[0];
+				 //splitting into each file + folder
+				 var files = filesData.split("\n\n");
+				 for (i = 0 ; i < files.length ; i++) {
+					 files[i] = files[i].split("\n");
+				 }
 				 
-				 var listElement = document.createElement("li");
-				 listElement.innerHTML = `<a onclick="loadFile('` + filepath + `');">` + filename + `</a>`
-				 list.append(listElement)
+				 for (i = 0 ; i < files.length ; i++) {
+					 //read the directory name
+					 var dirName = files[i][0].split("/")[1];
+					 //find the right link
+					 var list = $("#" + dirName + " > ul.dropdown-files");
+					 for (j = 0 ; j < files[i].length ; j++) {
+						 var filepath = files[i][j];
+						 //var filename = files[i][j].split("/")[2].split(".md")[0];
+						 var filename = files[i][j].split("/")[2];
+						 if (filename != undefined) {
+							 filename = filename.split(".md")[0];
+						 }
+						 
+						 var listElement = document.createElement("li");
+						 listElement.innerHTML = `<a onclick="loadFile('` + filepath + `');">` + filename + `</a>`
+						 list.append(listElement)
+					 }
+				 }
 			 }
-		 }
-		 
-		 
+		 })
 		 
 		 //this shows a file
 		 var loadFile = function(toLoad) {
@@ -195,7 +198,25 @@
 				 var htmlObject = document.createElement('div');
 				 htmlObject.innerHTML = markdownData;
 				 $(htmlObject).attr("class", "file");
-				 document.body.appendChild(htmlObject)
+				 
+				 $("body").css("overflow", "hidden");
+				 var exit = document.createElement("a");
+				 $(exit).attr("class", "exit");
+				 var symbol = document.createElement("i");
+				 $(symbol).attr("class", "fa fa-3x fa-times");
+				 $(exit).append($(symbol));
+				 document.body.appendChild(exit);
+				 $(".exit").click(function() {
+					 $(".file-wrapper").remove();
+					 $(".exit").remove();
+					 $("body").css("overflow", "auto");
+				 });
+				 
+				 var wrapper = document.createElement("div");
+				 $(wrapper).attr("class", "file-wrapper");
+				 $(wrapper).append(htmlObject);
+				 
+				 document.body.appendChild(wrapper);
 			 });
 		 }
 
