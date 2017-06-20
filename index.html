@@ -158,7 +158,11 @@
 		</script>
 		
 		<script type="text/javascript">
-		 //this makes the page static but the popup visible
+		 var files = jQuery.get("files.txt", function(data) {
+			 console.log(data);
+		 })
+
+		 console.log(files);
 		 
 		 //this shows a file
 		 var loadFile = function(toLoad) {
@@ -172,7 +176,7 @@
 			 });
 		 }
 
-		 loadFile("README.md");
+		 
         </script>
 		
     </body>
