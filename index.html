@@ -160,9 +160,9 @@
 		<script type="text/javascript">
 		 var files = jQuery.get("files.txt", function(data) {
 			 console.log(data);
-		 })
+		 })['responseText'];
 
-		 console.log(files);
+		 var filesArray = files.split("\n");
 		 
 		 //this shows a file
 		 var loadFile = function(toLoad) {
