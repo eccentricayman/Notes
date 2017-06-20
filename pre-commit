@@ -1,6 +1,0 @@
-#!/bin/bash
-#put this file in .git/hooks
-
-python updateFiles.py
-
-git add --all
