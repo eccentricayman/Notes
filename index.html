@@ -189,7 +189,8 @@
 						 }
 						 
 						 var listElement = document.createElement("li");
-						 listElement.innerHTML = `<a onclick="loadFile('` + filepath + `');">` + filename + `</a>`
+						 var parsedFilePath = filepath.replace(/'/g, "\'");
+						 listElement.innerHTML = `<a onclick="loadFile('` + parsedFilePath + `');">` + filename + `</a>`
 						 list.append(listElement)
 					 }
 				 }
