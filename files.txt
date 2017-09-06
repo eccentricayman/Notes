@@ -1,3 +1,5 @@
+files/Calculus/08_30.md
+
 files/Graphics/02_01.md
 files/Graphics/02_06.md
 files/Graphics/02_16.md
@@ -12,6 +14,8 @@ files/Graphics/04_20.md
 files/Graphics/04_27.md
 files/Graphics/05_01.md
 files/Graphics/05_23.md
+
+files/Macroeconomics/08_31.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
@@ -90,3 +94,5 @@ files/Systems/Wait for it....md
 files/Systems/What goes up really should come down..md
 files/Systems/What the fork_.md
 files/Systems/What's the point of it all.md
+
+files/Theology/09_06.md
