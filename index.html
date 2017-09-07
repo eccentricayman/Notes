@@ -77,7 +77,7 @@
             </div>
         </nav>
 
-		<h1 class="heading" style="padding-top: 7.5%">Notes</h1>
+		<h1 class="heading" style="padding-top: 7.5%">Stuy Notes</h1>
 		<br>
 
 		<div class="row">
@@ -103,13 +103,21 @@
 			</div>
 			
 		</div>
-		
+
 		<div class="row">
 			<div class="four columns subject" id="SciFi">
 				<a class="dropdown-link">Science Fiction <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 				</ul>
 			</div>
+		</div>
+
+		<div style="width: 50% ; margin: 0 auto"><hr></div>
+
+		<h1 class="heading" style="padding-top: 7.5%">St. John's Notes</h1>
+		<br>
+		
+		<div class="row">
 			<div class="four columns subject" id="CSFundamentals2">
 				<a class="dropdown-link">CS Fundamentals 2 <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
@@ -117,6 +125,11 @@
 			</div>
 			<div class="four columns subject" id="Calc1">
 				<a class="dropdown-link">Calculus 1 <i class="fa fa-angle-down"></i></a>
+				<ul class="dropdown-files">
+				</ul>
+			</div>
+			<div class="four columns subject" id="Theology">
+				<a class="dropdown-link">Theology <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 				</ul>
 			</div>
@@ -130,11 +143,6 @@
 			</div>
 			<div class="four columns subject" id="Macroeconomics1">
 				<a class="dropdown-link">Macroeconomics <i class="fa fa-angle-down"></i></a>
-				<ul class="dropdown-files">
-				</ul>
-			</div>
-			<div class="four columns subject" id="Theology">
-				<a class="dropdown-link">Theology <i class="fa fa-angle-down"></i></a>
 				<ul class="dropdown-files">
 				</ul>
 			</div>
@@ -211,7 +219,7 @@
 						 var filepath = files[i][j];
 						 //var filename = files[i][j].split("/")[2].split(".md")[0];
 						 var filename = files[i][j].split("/")[2];
-						 if (filename != undefined) {
+						 if (filename != "undefined") {
 							 filename = filename.split(".md")[0];
 						 }
 						 
