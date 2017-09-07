@@ -1,4 +1,4 @@
-files/Calculus/08_30.md
+files/Calc1/08_30.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
@@ -15,7 +15,7 @@ files/Graphics/04_27.md
 files/Graphics/05_01.md
 files/Graphics/05_23.md
 
-files/Macroeconomics/08_31.md
+files/Macroeconomics1/08_31.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
@@ -96,3 +96,4 @@ files/Systems/What the fork_.md
 files/Systems/What's the point of it all.md
 
 files/Theology/09_06.md
+files/Theology/09_07.md
