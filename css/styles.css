@@ -134,7 +134,7 @@ body {
 	border: 2px solid #ddd;
 	padding: 1%;
 	text-align: center;
-	margin-bottom: 5%;
+	margin-bottom: 15%;
 }
 
 .dropdown-link {
@@ -463,5 +463,9 @@ body {
 	.exit:hover {
 		color: #bbbbbb;
 	}
+
+	.subject {
+	    margin-bottom: 0;
+	}	
 
 }
