@@ -1,6 +1,7 @@
 files/Calc1/08_30.md
 
 files/Geography/09_08.md
+files/Geography/09_12.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
