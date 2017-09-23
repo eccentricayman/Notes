@@ -6,6 +6,7 @@ files/Geography/09_08.md
 files/Geography/09_12.md
 files/Geography/09_15.md
 files/Geography/09_19.md
+files/Geography/09_22.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
