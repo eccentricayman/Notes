@@ -35,6 +35,7 @@ files/Macroeconomics1/10_02.md
 files/Macroeconomics1/10_05.md
 files/Macroeconomics1/10_12.md
 files/Macroeconomics1/10_16.md
+files/Macroeconomics1/10_19.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
@@ -122,3 +123,4 @@ files/Theology/09_25.md
 files/Theology/10_05.md
 files/Theology/10_12.md
 files/Theology/10_16.md
+files/Theology/10_19.md
