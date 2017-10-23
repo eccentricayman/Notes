@@ -256,7 +256,7 @@
 							function() {
 								if (jQuery(this).attr("class") != "navbar-image-link") {
 									var directories = toLoad.split("/");
-									console.log(toLoad);
+									console.log(jQuery(this))
 									var currentSource = jQuery(this).attr("src");
 									jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
 								}
