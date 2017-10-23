@@ -48,9 +48,9 @@
 		<script type="text/javascript" src="markdown.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 		<script type="text/x-mathjax-config">
-		 MathJax.Hub.Config({
-			 tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-		 });
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+			});
 		</script>
     </head>
 
@@ -139,135 +139,137 @@
 		</div>
 		
         <div class="copyright"><p>Notes best viewed in <a href="https://www.typora.io" style="color: #404040">Typora</a>.<br><i class="fa fa-copyright"></i> Ayman Ahmed 2017</p></div>
-            
-        </div>
         
-        <!-- Scripts -->
-		<!-- <script type="text/javascript">
-			 //make dropdown on navbar work, this is ok bc there's only one
-			 //stop gets rid of count
-			 $(".dropdown-caller").on("mouseover", function() {
-			 $(".dropdown-list").stop(true, false, true).slideDown(150);
-			 })
-			 $(".dropdown-list").on("mouseout", function() {
-			 $(".dropdown-list").stop(true, false, true).slideUp(150);
-			 })
-			 </script> -->
-		
-		<script type="text/javascript">
-         //make links smooth scroll
-         var $root = $('html, body');
-         $('a.navbar-link').click(function() {
-             var href = $.attr(this, 'href');
-             if (href == "#about") {
-                 $root.animate({
-                     scrollTop: $(href).offset().top
-                 }, 500, function () {
-                     window.location.hash = href;
-                 });
-             }
-			 else if (href == "#non-link") {
-			 }
-             else {
-                 $root.animate({
-                     scrollTop: $(href).offset().top - 100
-                 })
-             }
-             return false;
-         });
-        </script>
+			</div>
+			
+			<!-- Scripts -->
+			<!-- <script type="text/javascript">
+				 //make dropdown on navbar work, this is ok bc there's only one
+				 //stop gets rid of count
+				 $(".dropdown-caller").on("mouseover", function() {
+				 $(".dropdown-list").stop(true, false, true).slideDown(150);
+				 })
+				 $(".dropdown-list").on("mouseout", function() {
+				 $(".dropdown-list").stop(true, false, true).slideUp(150);
+				 })
+				 </script> -->
+			
+			<script type="text/javascript">
+				//make links smooth scroll
+				var $root = $('html, body');
+				$('a.navbar-link').click(function() {
+					var href = $.attr(this, 'href');
+					if (href == "#about") {
+						$root.animate({
+							scrollTop: $(href).offset().top
+						}, 500, function () {
+							window.location.hash = href;
+						});
+					}
+					else if (href == "#non-link") {
+					}
+					else {
+						$root.animate({
+							scrollTop: $(href).offset().top - 100
+						})
+					}
+					return false;
+				});
+			</script>
 
-		<script type="text/javascript">
-		 //notes menus
-		 $(".dropdown-link").on("click", function() {
-			 $(this).siblings(".dropdown-files").slideToggle();
-			 if ($(this).children(".fa").attr("class") == "fa fa-angle-down") {
-				 $(this).children(".fa").attr("class", "fa fa-angle-up");
-			 }
-			 else {
-				 $(this).children(".fa").attr("class", "fa fa-angle-down");
-			 }
-		 })
-		</script>
-		
-		<script type="text/javascript">
-		 jQuery.ajax({
-			 url: "files.txt",
-			 async: false,
-			 success: function(data) {
-				 var filesData = data;
+			<script type="text/javascript">
+				//notes menus
+				$(".dropdown-link").on("click", function() {
+					$(this).siblings(".dropdown-files").slideToggle();
+					if ($(this).children(".fa").attr("class") == "fa fa-angle-down") {
+						$(this).children(".fa").attr("class", "fa fa-angle-up");
+					}
+					else {
+						$(this).children(".fa").attr("class", "fa fa-angle-down");
+					}
+				})
+			</script>
+			
+			<script type="text/javascript">
+				jQuery.ajax({
+					url: "files.txt",
+					async: false,
+					success: function(data) {
+						var filesData = data;
 
-				 //splitting into each file + folder
-				 var files = filesData.split("\n\n");
-				 for (i = 0 ; i < files.length ; i++) {
-					 files[i] = files[i].split("\n");
-				 }
-				 
-				 for (i = 0 ; i < files.length ; i++) {
-					 //read the directory name
-					 var dirName = files[i][0].split("/")[1];
-					 //find the right link
-					 var list = $("#" + dirName + " > ul.dropdown-files");
-					 for (j = 0 ; j < files[i].length ; j++) {
-						 var filepath = files[i][j];
-						 //var filename = files[i][j].split("/")[2].split(".md")[0];
-						 var filename = files[i][j].split("/")[2];
-						 if (filename != undefined) {
-							 filename = filename.split(".md")[0];
-						 }
-						 
-						 var listElement = document.createElement("li");
-						 var parsedFilePath = filepath.replace(/'/g, "\'");
-						 listElement.innerHTML = `<a onclick="loadFile('` + parsedFilePath + `');">` + filename + `</a>`
-						 list.append(listElement)
-					 }
-				 }
-			 }
-		 })
-		 
-		 //this shows a file
-		 var loadFile = function(toLoad) {
-			 jQuery.get(toLoad, function(data) {
-				 var markdownData = markdown.toHTML(data, "Maruku");
-
-				 var htmlObject = document.createElement('div');
-				 htmlObject.innerHTML = markdownData;
-				 $(htmlObject).attr("class", "file");
-				 
-				 $("body").css("overflow", "hidden");
-				 var exit = document.createElement("a");
-				 $(exit).attr("class", "exit");
-				 var symbol = document.createElement("i");
-				 $(symbol).attr("class", "fa fa-3x fa-times");
-				 $(exit).append($(symbol));
-				 document.body.appendChild(exit);
-				 $(".exit").click(function() {
-					 $(".file-wrapper").remove();
-					 $(".exit").remove();
-					 $("body").css("overflow", "auto");
-				 });
-									  
-				 var wrapper = document.createElement("div");
-				 $(wrapper).attr("class", "file-wrapper");
-				 $(wrapper).append(htmlObject);
-				 
-				 document.body.appendChild(wrapper);
-				 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-			 });
-				//image support, local file -> web link
-				$('img').each(
-					function() {
-						if (jQuery(this).attr("class") != "navbar-image-link") {
-							var directories = toLoad.split("/");
-							console.log(toLoad);
-							var currentSource = jQuery(this).attr("src");
-							jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
+						//splitting into each file + folder
+						var files = filesData.split("\n\n");
+						for (i = 0 ; i < files.length ; i++) {
+							files[i] = files[i].split("\n");
 						}
-					});
-		 }
+						
+						for (i = 0 ; i < files.length ; i++) {
+							//read the directory name
+							var dirName = files[i][0].split("/")[1];
+							//find the right link
+							var list = $("#" + dirName + " > ul.dropdown-files");
+							for (j = 0 ; j < files[i].length ; j++) {
+								var filepath = files[i][j];
+								//var filename = files[i][j].split("/")[2].split(".md")[0];
+								var filename = files[i][j].split("/")[2];
+								if (filename != undefined) {
+									filename = filename.split(".md")[0];
+								}
+								
+								var listElement = document.createElement("li");
+								var parsedFilePath = filepath.replace(/'/g, "\'");
+								listElement.innerHTML = `<a onclick="loadFile('` + parsedFilePath + `');">` + filename + `</a>`
+								list.append(listElement)
+							}
+						}
+					}
+				})
+				
+				//this shows a file
+				var loadFile = function(toLoad) {
+					console.log(toLoad);
+					jQuery.get(toLoad, function(data) {
+						var markdownData = markdown.toHTML(data, "Maruku");
 
-		 
-        </script>
-		
+						var htmlObject = document.createElement('div');
+						htmlObject.innerHTML = markdownData;
+						$(htmlObject).attr("class", "file");
+						
+						$("body").css("overflow", "hidden");
+						var exit = document.createElement("a");
+						$(exit).attr("class", "exit");
+						var symbol = document.createElement("i");
+						$(symbol).attr("class", "fa fa-3x fa-times");
+						$(exit).append($(symbol));
+						document.body.appendChild(exit);
+						$(".exit").click(function() {
+							$(".file-wrapper").remove();
+							$(".exit").remove();
+							$("body").css("overflow", "auto");
+						});
+						
+						var wrapper = document.createElement("div");
+						$(wrapper).attr("class", "file-wrapper");
+						$(wrapper).append(htmlObject);
+						
+						document.body.appendChild(wrapper);
+						MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+					});
+					
+					//image support, local file -> web link
+					$('img').each(
+						function() {
+							if (jQuery(this).attr("class") != "navbar-image-link") {
+								var directories = toLoad.split("/");
+								console.log(toLoad);
+								var currentSource = jQuery(this).attr("src");
+								jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
+							}
+						});
+				}
+
+				
+			</script>
+			
     </body>
 </html>
