@@ -247,14 +247,6 @@
 					 $(".exit").remove();
 					 $("body").css("overflow", "auto");
 				 });
-
-				 //image support, local file -> web link
-				 $('p > img').each(
-					 function() {
-						 var directories = toLoad.split("/");
-						 var currentSource = jQuery(this).attr("src");
-						 jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
-					 })
 									  
 				 var wrapper = document.createElement("div");
 				 $(wrapper).attr("class", "file-wrapper");
@@ -263,6 +255,13 @@
 				 document.body.appendChild(wrapper);
 				 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 			 });
+				//image support, local file -> web link
+				$('p > img').each(
+					function() {
+						var directories = toLoad.split("/");
+						var currentSource = jQuery(this).attr("src");
+						jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
+					});
 		 }
 
 		 
