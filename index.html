@@ -230,6 +230,10 @@
 					jQuery.get(toLoad, function(data) {
 						var markdownData = markdown.toHTML(data, "Maruku");
 
+						//image support
+						var directories = toLoad.split("/");
+						markdownData.replace("src=\"", "src=\"" + directories[0] + "/" + directories[1] + "/")
+						
 						var htmlObject = document.createElement('div');
 						htmlObject.innerHTML = markdownData;
 						$(htmlObject).attr("class", "file");
@@ -251,17 +255,6 @@
 						$(wrapper).attr("class", "file-wrapper");
 						$(wrapper).append(htmlObject);
 
-						//image support, local file -> web link
-						$('img').each(
-							function() {
-								if (jQuery(this).attr("class") != "navbar-image-link") {
-									var directories = toLoad.split("/");
-									console.log(jQuery(this))
-									var currentSource = jQuery(this).attr("src");
-									jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
-								}
-							});
-						
 						document.body.appendChild(wrapper);
 						MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 					});					
