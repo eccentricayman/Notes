@@ -255,12 +255,14 @@
 				 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 			 });
 				//image support, local file -> web link
-				$('p > img').each(
+				$('img').each(
 					function() {
-						var directories = toLoad.split("/");
-						console.log(toLoad);
-						var currentSource = jQuery(this).attr("src");
-						jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
+						if (jQuery(this).attr("class") != "navbar-image-link") {
+							var directories = toLoad.split("/");
+							console.log(toLoad);
+							var currentSource = jQuery(this).attr("src");
+							jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
+						}
 					});
 		 }
 
