@@ -229,6 +229,10 @@ body {
     margin: 0;
 }
 
+p > img {
+	width: 100%;
+}
+
 /* Larger than tablet */
 @media (min-width: 750px) {
 
