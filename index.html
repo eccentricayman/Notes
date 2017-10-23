@@ -259,6 +259,7 @@
 				$('p > img').each(
 					function() {
 						var directories = toLoad.split("/");
+						console.log("ayylmao" + toLoad);
 						var currentSource = jQuery(this).attr("src");
 						jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
 					});
