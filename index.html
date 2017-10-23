@@ -253,7 +253,7 @@
 						 var directories = toLoad.split("/");
 						 
 						 var currentSource = jQuery(this).attr("src");
-						 jQuery(this).attr('src').replace(currentSource, directories[0] + "/" + directories[1] + "/" + currentSource);
+						 jQuery(this).attr('src', directories[0] + "/" + directories[1] + "/" + currentSource);
 					 })
 									  
 				 var wrapper = document.createElement("div");
