@@ -12,6 +12,7 @@ files/Geography/09_22.md
 files/Geography/09_26.md
 files/Geography/09_29.md
 files/Geography/10_10.md
+files/Geography/10_20.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
@@ -36,6 +37,7 @@ files/Macroeconomics1/10_05.md
 files/Macroeconomics1/10_12.md
 files/Macroeconomics1/10_16.md
 files/Macroeconomics1/10_19.md
+files/Macroeconomics1/10_23.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
