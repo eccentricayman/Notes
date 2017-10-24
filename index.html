@@ -233,7 +233,6 @@
 						//image support
 						var directories = toLoad.split("/");
 						markdownData.replace("src=\"", "src=\"" + directories[0] + "/" + directories[1] + "/")
-						console.log(markdownData);
 						
 						var htmlObject = document.createElement('div');
 						htmlObject.innerHTML = markdownData;
