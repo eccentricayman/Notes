@@ -231,8 +231,10 @@
 						//image support
 						var directories = toLoad.split("/");
 						var findImages = /\!\[([a-z0-9]+)\]\(/
-						data.replace(findImages, findImages.exec(data) + directories[0] + "/" + directories[1] + "/")
-						console.log(findImages.exec(data))
+						if (findImages.exec(data).length > 0) {
+							data.replace(findImages, findImages.exec(data)[0] + directories[0] + "/" + directories[1] + "/")
+							console.log(findImages.exec(data))
+							}
 						
 						var markdownData = markdown.toHTML(data, "Maruku");
 						
