@@ -228,10 +228,14 @@
 				//this shows a file
 				var loadFile = function(toLoad) {
 					jQuery.get(toLoad, function(data) {
-						var markdownData = markdown.toHTML(data, "Maruku");
-
 						//image support
 						var directories = toLoad.split("/");
+						var findImages = /\!\[([a-z0-9]+)\]\(/g
+						data.replace(findImages, "$1" + directories[0] + "/" + directories[1] + "/")
+						
+						var markdownData = markdown.toHTML(data, "Maruku");
+						
+						
 						markdownData.replace("src=\"", "src=\"" + directories[0] + "/" + directories[1] + "/")
 						
 						var htmlObject = document.createElement('div');

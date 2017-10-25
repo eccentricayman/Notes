@@ -3,6 +3,7 @@ files/Calc1/09_13.md
 files/Calc1/09_20.md
 files/Calc1/09_27.md
 files/Calc1/10_11.md
+files/Calc1/10_25.md
 
 files/Geography/09_08.md
 files/Geography/09_12.md
@@ -13,6 +14,7 @@ files/Geography/09_26.md
 files/Geography/09_29.md
 files/Geography/10_10.md
 files/Geography/10_20.md
+files/Geography/10_24.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
