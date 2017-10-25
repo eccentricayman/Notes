@@ -230,9 +230,9 @@
 					jQuery.get(toLoad, function(data) {
 						//image support
 						var directories = toLoad.split("/");
-						var findImages = /(\!\[([a-z0-9]+)\]\()/
+						var findImages = /(\!\[[a-z0-9]+\]\()/
 						if (findImages.exec(data).length > 0) {
-							var newData = data.replace(findImages.exec(data)[0], "$1")
+							var newData = data.replace(findImages.exec(data)[0], "$0" + directories[0] + "/" + directories[1] + "/")
 							console.log(newData)
 						}
 						
