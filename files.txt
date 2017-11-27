@@ -15,6 +15,8 @@ files/Geography/09_29.md
 files/Geography/10_10.md
 files/Geography/10_20.md
 files/Geography/10_24.md
+files/Geography/10_27.md
+files/Geography/10_31.md
 
 files/Graphics/02_01.md
 files/Graphics/02_06.md
@@ -40,6 +42,13 @@ files/Macroeconomics1/10_12.md
 files/Macroeconomics1/10_16.md
 files/Macroeconomics1/10_19.md
 files/Macroeconomics1/10_23.md
+files/Macroeconomics1/10_30.md
+files/Macroeconomics1/11_06.md
+files/Macroeconomics1/11_09.md
+files/Macroeconomics1/11_13.md
+files/Macroeconomics1/11_16.md
+files/Macroeconomics1/11_20.md
+files/Macroeconomics1/11_27.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
@@ -128,3 +137,5 @@ files/Theology/10_05.md
 files/Theology/10_12.md
 files/Theology/10_16.md
 files/Theology/10_19.md
+files/Theology/10_26.md
+files/Theology/10_30.md
