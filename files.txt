@@ -5,6 +5,9 @@ files/Calc1/09_27.md
 files/Calc1/10_11.md
 files/Calc1/10_25.md
 
+files/DiscreteMathematics/01_22.md
+files/DiscreteMathematics/01_25.md
+
 files/Geography/09_08.md
 files/Geography/09_12.md
 files/Geography/09_15.md
@@ -33,7 +36,11 @@ files/Graphics/04_27.md
 files/Graphics/05_01.md
 files/Graphics/05_23.md
 
+files/History1/01_23.md
+
 files/Literature1/01_18.md
+files/Literature1/01_22.md
+files/Literature1/01_25.md
 
 files/Macroeconomics1/09_07.md
 files/Macroeconomics1/09_14.md
@@ -53,6 +60,8 @@ files/Macroeconomics1/11_20.md
 files/Macroeconomics1/11_27.md
 
 files/Microeconomics1/01_18.md
+files/Microeconomics1/01_25.md
+files/Microeconomics1/1_22.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
