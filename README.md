@@ -3,7 +3,8 @@ Notes for school, in markdown.
 
 Live at [notes.aymanahmed.tech](notes.aymanahmed.tech)
 
-##Todo
+## Todo
+
 [X] Basic File Support (Client side JS only)
 
 [X] Image Support (Must be in same subject directory)
