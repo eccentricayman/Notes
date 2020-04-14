@@ -1,5 +1,13 @@
 files/IntroDataStructures/01_30.md
 
+files/Writing1/10_01.md
+files/Writing1/10_15.md
+files/Writing1/10_22.md
+files/Writing1/09_17.md
+files/Writing1/12_03.md
+files/Writing1/11_19.md
+files/Writing1/11_26.md
+
 files/Macroeconomics1/11_20.md
 files/Macroeconomics1/09_14.md
 files/Macroeconomics1/10_30.md
@@ -18,19 +26,31 @@ files/Macroeconomics1/11_13.md
 files/Macroeconomics1/10_19.md
 
 files/Literature1/01_18.md
+files/Literature1/04_23.md
 files/Literature1/02_12.md
 files/Literature1/03_08.md
+files/Literature1/04_26.md
+files/Literature1/03_19.md
+files/Literature1/04_16.md
 files/Literature1/02_08.md
 files/Literature1/01_22.md
+files/Literature1/03_12.md
+files/Literature1/03_26.md
 files/Literature1/03_05.md
 files/Literature1/01_25.md
+files/Literature1/03_15.md
 files/Literature1/03_01.md
+files/Literature1/04_05.md
 files/Literature1/02_01.md
 
 files/SciFi/03_09.md
 files/SciFi/05_23.md
 files/SciFi/The Left Hand of Darkness.md
 files/SciFi/The Demolished Man.md
+
+files/CompArch/09_04.md
+
+files/OOP/01_30.md
 
 files/History1/02_02.md
 files/History1/01_26.md
@@ -52,8 +72,12 @@ files/Microeconomics1/01_18.md
 files/Microeconomics1/02_12.md
 files/Microeconomics1/01_29.md
 files/Microeconomics1/1_22.md
+files/Microeconomics1/03_19.md
+files/Microeconomics1/Untitled.md
+files/Microeconomics1/03_12.md
 files/Microeconomics1/03_05.md
 files/Microeconomics1/01_25.md
+files/Microeconomics1/03_15.md
 
 files/Calc1/08_30.md
 files/Calc1/09_20.md
@@ -93,16 +117,26 @@ files/SoftDev/After Being Framed, You Might Need a REST.md
 files/SoftDev/Sqlite, the low-fat alternative to SQL.md
 files/SoftDev/WHERE did I put that data_.md
 
+files/DiscreteMathematics/04_23.md
 files/DiscreteMathematics/02_12.md
 files/DiscreteMathematics/03_08.md
 files/DiscreteMathematics/01_29.md
+files/DiscreteMathematics/04_12.md
+files/DiscreteMathematics/03_19.md
+files/DiscreteMathematics/04_16.md
 files/DiscreteMathematics/02_08.md
+files/DiscreteMathematics/03_22.md
 files/DiscreteMathematics/01_22.md
+files/DiscreteMathematics/03_12.md
+files/DiscreteMathematics/03_26.md
 files/DiscreteMathematics/02_28.md
 files/DiscreteMathematics/03_05.md
 files/DiscreteMathematics/01_25.md
+files/DiscreteMathematics/04_05.md
 files/DiscreteMathematics/02_05.md
 files/DiscreteMathematics/02_15.md
+
+files/StudentOOP/README.md
 
 files/Graphics/02_06.md
 files/Graphics/04_27.md
@@ -161,6 +195,8 @@ files/Systems/Cisco in an hour - Part II_ Electric Boogaloo.md
 files/Systems/Sharing is caring!.md
 files/Systems/Wait for it....md
 
+files/StudentOOPOriginal/README.md
+
 files/Geography/10_20.md
 files/Geography/10_10.md
 files/Geography/10_24.md
@@ -173,3 +209,22 @@ files/Geography/10_27.md
 files/Geography/09_08.md
 files/Geography/09_29.md
 files/Geography/09_19.md
+
+files/Stat1/11_20.md
+files/Stat1/10_30.md
+files/Stat1/12_11.md
+files/Stat1/10_05.md
+files/Stat1/10_02.md
+files/Stat1/10_12.md
+files/Stat1/10_16.md
+files/Stat1/11_09.md
+files/Stat1/09_07.md
+files/Stat1/12_07.md
+files/Stat1/11_06.md
+files/Stat1/11_02.md
+files/Stat1/11_27.md
+files/Stat1/11_13.md
+
+files/Networking1/10_10.md
+files/Networking1/09_12.md
+files/Networking1/10_03.md
