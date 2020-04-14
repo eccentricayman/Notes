@@ -245,14 +245,14 @@
 				var loadFile = function(toLoad) {
 					jQuery.get(toLoad, function(data) {
 						//image support
-						var directories = toLoad.split("/");
-						var findImages = /(\!\[[a-z0-9]+\]\()/g
-						if (findImages.exec(data).length > 0) {
-							var newData = data.replace(findImages, "$1" + directories[0] + "/" + directories[1] + "/")
-							console.log(newData)
-						}
+						//var directories = toLoad.split("/");
+						//var findImages = /(\!\[[a-z0-9]+\]\()/g
+						//if (findImages.exec(data).length > 0) {
+						//	var newData = data.replace(findImages, "$1" + directories[0] + "/" + directories[1] + "/")
+						//	console.log(newData)
+						//}
 						
-						var markdownData = markdown.toHTML(newData, "Maruku");
+						//var markdownData = markdown.toHTML(newData, "Maruku");
 						
 						
 						markdownData.replace("src=\"", "src=\"" + directories[0] + "/" + directories[1] + "/")
